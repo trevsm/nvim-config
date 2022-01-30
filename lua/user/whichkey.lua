@@ -85,6 +85,7 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -107,6 +108,11 @@ local mappings = {
 
   g = {
     name = "Git",
+    s = {"<cmd>!git status<cr>", "status"},
+  },
+
+  G = {
+    name = "GitSigns",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -178,6 +184,7 @@ local mappings = {
     c = {":e ~/.config/nvim/lua/user/colorscheme.lua <CR>", "Edit Colorscheme"},
     w = {":e ~/.config/nvim/lua/user/whichkey.lua <CR>", "Edit Whichkey"},
     k = {":e ~/.config/nvim/lua/user/keymaps.lua <CR>", "Edit Keymaps"},
+    m = {":e ~/.config/nvim/lua/user/minimap.lua <CR>", "Edit Minimap"},
   },
 
   t = {
